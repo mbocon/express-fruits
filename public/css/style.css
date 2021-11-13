@@ -1,0 +1,16 @@
+h1 {
+    color: #663399;
+}
+
+.index-content {
+    display: flex;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.index-content > form{
+    margin: 0 1rem;
+}
+
+
+

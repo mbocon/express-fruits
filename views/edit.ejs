@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit a fruitt</title>
+</head>
+<body>
+    <h1>Editing <%= fruitToEdit.name %></h1>
+    <form action="" method="">
+        <!--  NOTE: the form is pre-populated with values for the server-->
+        Name: <input type="text" name="name" value="<%=fruitToEdit.name%>" /><br />
+        Color: <input type="text" name="color" value="<%=fruitToEdit.color%>" /><br />
+        Is Ready To Eat: <input type="checkbox" name="readyToEat" <% if(fruitToEdit.readyToEat===true){ %> checked <% } %> />
+            <br />
+            <input type="submit" name="" value="Submit Changes" />
+    </form>
+</body>
+</html>
