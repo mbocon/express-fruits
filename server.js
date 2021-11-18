@@ -43,7 +43,6 @@ app.get('/fruits', (req, res) => {
 // New
 
 app.get('/fruits/new', (req, res) => {
-    console.log(req.timeStamp.toLocaleTimeString())
     res.render('new.ejs');
 });
 
