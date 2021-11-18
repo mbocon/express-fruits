@@ -14,11 +14,11 @@ const app = express();
 // Mount middleware
 app.use(express.static('public'));
 
-app.use(function (req, res, next) {
-    console.log('I will run with each request');
-    req.timeStamp = new Date();
-    next();
-});
+// app.use(function (req, res, next) {
+//     console.log('I will run with each request');
+//     req.timeStamp = new Date();
+//     next();
+// });
 
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method"))
@@ -98,8 +98,14 @@ app.get('/fruits/:id/edit', (req, res) => {
 })
 
 // Put (update) Route
-app.put('/fruits/:id/edit', (req,res)=>{
-   
+app.put('/fruits/:id', (req,res)=>{
+    const fruitToEdit = fruits.find((fruit) => {
+        return fruit.id === Number(req.params.id)
+    })
+    fruitToEdit.name = req.body.name
+    fruitToEdit.color = req.body.color
+    fruitToEdit.readyToEat = !!req.body.readyToEat
+    res.redirect('/fruits')
 })
 
 

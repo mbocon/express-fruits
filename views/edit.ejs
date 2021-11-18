@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Editing <%= fruitToEdit.name %></h1>
-    <form action="" method="">
+    <form action="/fruits/<%=fruitToEdit.id %>?_method=PUT" method="POST">
         <!--  NOTE: the form is pre-populated with values for the server-->
         Name: <input type="text" name="name" value="<%=fruitToEdit.name%>" /><br />
         Color: <input type="text" name="color" value="<%=fruitToEdit.color%>" /><br />
